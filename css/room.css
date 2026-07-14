@@ -25,7 +25,7 @@ body {
 .room-header {
   display: flex;
   flex-direction: column;
-  border-bottom: 2px solid #238636;
+  border-bottom: 2px solid #4327d0;
   padding-bottom: 0.75rem;
 }
 
@@ -37,7 +37,7 @@ body {
 }
 
 .room-id {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 700;
   color: #58a6ff;
 }
@@ -55,6 +55,12 @@ body {
   flex-direction: row;
   overflow-y: auto;
   min-height: 0;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.timeline::-webkit-scrollbar {
+  display: none; /* Chrome/Safari/WebKit */
 }
 
 .hour-gutter {
@@ -141,10 +147,11 @@ body {
 .status-bar {
   display: flex;
   justify-content: space-between;
-  font-size: 0.75rem;
+  font-size: 1rem;
   color: #8b949e;
   border-top: 1px solid #30363d;
   padding-top: 0.5rem;
+  font-weight: bold;
 }
 
 .status.error {

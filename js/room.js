@@ -99,8 +99,8 @@ function setStatus(ok, message) {
 
 async function refresh() {
   try {
-    /*const response = await fetch(`/api/v1/room-bookings/${roomId}`);
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);*/
+    // const response = await fetch(`/api/v1/room-bookings/${roomId}`);
+    // if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const data = MOCK;
     if (data.version && sessionStorage.getItem('appVersion') !== data.version) {
       sessionStorage.setItem('appVersion', data.version);
@@ -109,14 +109,13 @@ async function refresh() {
     }
     render(data);
     if (data.stale) {
-      setStatus(false, 'Stale data – Infosilem unavailable');
+      setStatus(false, 'L\'API Infosilem ne répond pas');
     } else {
-      setStatus(true, 'Live');
-      lastUpdatedEl.textContent = 'Updated ' + new Date().toLocaleTimeString();
+      setStatus(true, 'À jour');
+      lastUpdatedEl.textContent = 'Dernière mise à jour ' + new Date().toLocaleTimeString();
     }
   } catch (e) {
-    console.error('Refresh failed:', e);
-    setStatus(false, 'Update failed: ' + e.message);
+    setStatus(false, 'La mise à jour a échoué: ' + e.message);
   }
 }
 
