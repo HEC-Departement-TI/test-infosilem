@@ -1,3 +1,17 @@
+const MOCK = {
+    "roomId": "C.610",
+    "bookings": [
+        {
+            "description": "* BUREAU SUR RESERVATION",
+            "date": "2026-07-14",
+            "startTime": "14:00",
+            "endTime": "18:00"
+        }
+    ],
+    "version": "0.1",
+    "stale": false
+};
+
 const roomId = document.querySelector('.room-id').textContent.trim();
 const bookingsEl = document.getElementById('bookings');
 const gutterEl   = document.getElementById('hour-gutter');
@@ -85,9 +99,9 @@ function setStatus(ok, message) {
 
 async function refresh() {
   try {
-    const response = await fetch(`/api/v1/room-bookings/${roomId}`);
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    const data = await response.json();
+    /*const response = await fetch(`/api/v1/room-bookings/${roomId}`);
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);*/
+    const data = MOCK;
     if (data.version && sessionStorage.getItem('appVersion') !== data.version) {
       sessionStorage.setItem('appVersion', data.version);
       location.reload();
