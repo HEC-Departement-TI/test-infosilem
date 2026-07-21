@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Salles</title>
+  <link rel="stylesheet" th:href="@{/css/base.css}"/>
+  <link rel="stylesheet" th:href="@{/css/room-log.css}"/>
+</head>
+<body>
+  <div class="screen">
+    <header>
+      <img class="logo" th:src="@{/img/logo.png}" alt="Logo HEC" />
+      <h1 class="room-id" th:text="${roomId}">Salle</h1>
+    </header>
+
+    <main>
+      <a class="back-link" href="../../rooms">&lt; Retour</a>
+
+      <table class="rooms-table">
+        <thead>
+          <tr>
+            <th>ID Requête</th>
+            <th>Date</th>
+            <th>Statut</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr th:each="entry : ${entries}">
+            <td th:text="${entry.id}"></td>
+            <td th:text="${#dates.format(entry.date, 'yyyy-MM-dd HH:mm:ss')}"></td>
+            <td th:text="${entry.success} ? 'Succès' : 'Erreur'"></td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+  </div>
+</body>
+</html>

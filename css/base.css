@@ -1,0 +1,102 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f5f7fa;
+  color: #1a1f2e;
+  height: 100vh;
+  display: flex;
+  align-items: stretch;
+}
+
+.screen {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0.5rem;
+  gap: 1rem;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #002855;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  border-bottom: 2px solid #002855;
+  padding-bottom: 0.5rem;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+thead {
+  background: #002855;
+  color: #fff;
+}
+
+th {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+td {
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid #e8ecf0;
+  font-size: 0.95rem;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+tbody tr:hover {
+  background: #f0f4f8;
+}
+
+table a {
+  color: #002855;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid #002855;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+table a:hover {
+  background: #002855;
+  color: #fff;
+}
+
+.back-link {
+  display: block;
+  margin-bottom: 0.5em;
+  font-size: 1.5em;
+}

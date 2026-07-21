@@ -1,22 +1,30 @@
-
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>C.610</title>
-  <link rel="stylesheet" href="/test-infosilem/css/room.css"/>
-  <script src="/test-infosilem/js/room.js" defer></script>
+  <title text="${roomId}">Salle</title>
+  <link rel="stylesheet" href="css/base.css"/>
+  <link rel="stylesheet" href="css/room.css"/>
+  <script>
+    var config = {
+      refreshTimeout: 5,
+      refreshJitter: 2,
+      contextPath: ''
+    };
+  </script>
+  <script src="/js/room.js" defer></script>
 </head>
 <body>
   <div class="screen">
-
-    <header class="room-header">
-      <h1 class="room-id">C.610</h1>
-      <span class="room-date" id="room-date"></span>
+    <header>
+      <img class="logo" src="img/logo.png" alt="Logo HEC" />
+      <h1 class="room-id">Salle</h1>
+      <div class="room-date" id="room-date"></div>
     </header>
 
     <main class="timeline">
+      <div class="loading"></div>
       <div class="hour-gutter" id="hour-gutter"></div>
       <div class="timeline-canvas" id="bookings"></div>
     </main>
@@ -25,7 +33,6 @@
       <span class="status" id="status">–</span>
       <span class="last-updated" id="last-updated"></span>
     </footer>
-
   </div>
 </body>
 </html>

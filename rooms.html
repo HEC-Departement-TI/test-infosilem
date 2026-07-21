@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Salles</title>
+  <link rel="stylesheet" th:href="@{/css/base.css}"/>
+  <link rel="stylesheet" th:href="@{/css/rooms.css}"/>
+</head>
+<body>
+  <div class="screen">
+    <header>
+      <img class="logo" th:src="@{/img/logo.png}" alt="Logo HEC" />
+      <h1 class="room-id">Salles</h1>
+    </header>
+
+    <main>
+      <table class="rooms-table">
+        <thead>
+          <tr>
+            <th>Édifice</th>
+            <th>Salle</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr th:each="room : ${rooms.rooms}">
+            <td th:text="${room.building}"></td>
+            <td th:text="${room.id}"></td>
+            <td><a th:href="@{/room/{id}(id=${room.id})}">Horaire</a></td>
+            <td><a th:href="@{/room/{id}/log(id=${room.id})}">Requêtes</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+  </div>
+</body>
+</html>
