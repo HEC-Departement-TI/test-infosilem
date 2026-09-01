@@ -104,28 +104,8 @@
   async function refresh(showLoading) {
     const rawDate = new Date().toLocaleDateString(undefined, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
     roomDateEl.textContent = rawDate.charAt(0).toUpperCase() + rawDate.slice(1);
-    if (showLoading) loadingEl.classList.add('visible');
-    try {
-      /*const response = await fetch(`${config.contextPath}api/v1/room-bookings/${roomId}`);
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);*/
-      const data = MOCK;
-      if (data.version && sessionStorage.getItem('appVersion') !== data.version) {
-        sessionStorage.setItem('appVersion', data.version);
-        location.reload();
-        return;
-      }
-      render(data);
-      if (data.stale) {
-        setStatus(false, 'L\'API Infosilem ne répond pas');
-      } else {
-        setStatus(true, 'À jour');
-        lastUpdatedEl.textContent = 'Dernière mise à jour ' + new Date().toLocaleTimeString();
-      }
-    } catch (e) {
-      setStatus(false, 'La mise à jour a échoué: ' + e.message);
-    } finally {
-      if (showLoading) loadingEl.classList.remove('visible');
-    }
+
+    location.reload();
   }
 
 refresh(true);
