@@ -4,6 +4,10 @@
   padding: 0;
 }
 
+html {
+  font-size: 20px;
+}
+
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
   background: #f5f7fa;
@@ -42,6 +46,26 @@ header {
   height: 80px;
 }
 
+.link {
+  display: inline-block;
+  color: #002855;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid #002855;
+  border-radius: 4px;
+  transition: background 0.15s, color 0.15s;
+}
+
+.link:hover {
+  background: #002855;
+  color: #fff;
+}
+
+.success { color: #16a34a; font-weight: 600; }
+.error   { color: #dc2626; font-weight: 600; }
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -75,6 +99,72 @@ tbody tr:last-child td {
   border-bottom: none;
 }
 
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.page-form {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.page-input {
+  width: 4rem;
+  padding: 0.35rem 0.5rem;
+  border: 1px solid #c5cdd8;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #1a1f2e;
+  background: #fff;
+}
+
+.page-input:focus {
+  outline: 2px solid #002855;
+  outline-offset: 1px;
+}
+
+.page-total {
+  font-size: 0.9rem;
+  color: #5a6270;
+  white-space: nowrap;
+}
+
+.page-btn {
+  display: inline-block;
+  min-width: 2.2rem;
+  padding: 0.4rem 0.6rem;
+  text-align: center;
+  text-decoration: none;
+  color: #002855;
+  border: 1px solid #c5cdd8;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  background: #fff;
+  transition: background 0.15s, color 0.15s;
+}
+
+.page-btn:hover:not(.disabled):not(.active) {
+  background: #e8ecf0;
+}
+
+.page-btn.active {
+  background: #002855;
+  color: #fff;
+  border-color: #002855;
+  font-weight: 600;
+  pointer-events: none;
+}
+
+.page-btn.disabled {
+  color: #aab0ba;
+  border-color: #e0e4ea;
+  pointer-events: none;
+}
+
 tbody tr:hover {
   background: #f0f4f8;
 }
@@ -95,7 +185,7 @@ table a:hover {
   color: #fff;
 }
 
-.back-link {
+.link {
   display: block;
   margin-bottom: 0.5em;
   font-size: 1.5em;
